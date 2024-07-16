@@ -3,7 +3,7 @@ import {Book} from "../models/book-models.js"
 const router=express.Router();
 
 // Below mentioned code is to create a GET endpoint to fetch all books, this was done purely for understanding purposes
-router.get('/books', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const books = await Book.find({});
         res.status(200).send({
@@ -17,7 +17,7 @@ router.get('/books', async (req, res) => {
 });
 
 //This routing is to get a single book by its id
-router.get('/books/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
 
         const { id }=req.params;
@@ -31,7 +31,7 @@ router.get('/books/:id', async (req, res) => {
 });
 
 //this route is to create a new book
-router.post('/books',async (req,res)=>{
+router.post('/',async (req,res)=>{
     try{
         if( !req.body.title||
             !req.body.author||
@@ -59,7 +59,7 @@ router.post('/books',async (req,res)=>{
 });
 
 //this route is to update an existing book
-router.put('/books/:id',async(req,res)=>
+router.put('/:id',async(req,res)=>
 {
     try{
         if( !req.body.title||
@@ -87,7 +87,7 @@ router.put('/books/:id',async(req,res)=>
 });
 
 //this route is to delete an existing book
-router.delete('/books/:id',async(req,res)=>{
+router.delete('/:id',async(req,res)=>{
     try{
         
         const {id}=req.params;
@@ -103,5 +103,4 @@ router.delete('/books/:id',async(req,res)=>{
         res.status(404).send({message: error.message});
     }
 });
-
 export default router;
