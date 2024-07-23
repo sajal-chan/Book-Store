@@ -1,4 +1,5 @@
 import express, { request } from "express"
+import {cors} from "express"
 import {PORT,MongoDBURL} from "./config.js"
 import mongoose, { connect } from "mongoose";
 import {Book} from "./models/book-models.js"
@@ -16,6 +17,7 @@ app.use('/books',router)
 
 //MIDDLEWARE for handling CORS policy
 //ALLOW CUSTOM ORIGINS
+// const cors=require('cors');
 app.use(
     cors({
         origin:`http://localhost:5555/books`,
