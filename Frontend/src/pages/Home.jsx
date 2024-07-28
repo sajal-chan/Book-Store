@@ -99,20 +99,36 @@ function Home() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false); // Fixed variable name
 
+  // useEffect(() => {
+  //   setLoading(true);
+  //   axios
+  //     .get('http://localhost:5555/books')
+  //     .then((response) => {
+  //       console.log(response.data.data);
+  //       setBooks(response.data.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
     setLoading(true);
     axios
       .get('http://localhost:5555/books')
       .then((response) => {
-        console.log(response.data.data)
         setBooks(response.data.data);
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         setLoading(false);
       });
   }, []);
+
+
 
   return (
     <div className='p-4'>
