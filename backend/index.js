@@ -21,20 +21,6 @@ app.get('/',(req,res)=>{
 })
 app.use('/books',router)
 
-//MIDDLEWARE for handling CORS policy
-//ALLOW CUSTOM ORIGINS
-// const cors=require('cors');
-// app.use(
-//     cors({
-//         origin: `http://localhost:5173`,
-//         methods:['GET','POST','PUT','DELETE'],
-//         allowHeaders: ['Content-Type'],
-//     })
-// );
-
-  
-
-
 mongoose
 .connect(MongoDBURL) 
 .then(()=>{
