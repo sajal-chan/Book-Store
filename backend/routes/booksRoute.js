@@ -2,7 +2,7 @@ import express from 'express'
 import {Book} from "../models/book-models.js"
 const router=express.Router();
 
-// Below mentioned code is to create a GET endpoint to fetch all books, this was done purely for understanding purposes
+// Below mentioned code is to create a GET endpoint to fetch all books
 router.get('/', async (req, res) => {
     try {
         const books = await Book.find({});

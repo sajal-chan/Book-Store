@@ -11,8 +11,8 @@ function ShowBook() {
   
   useEffect(()=>{
     setLoading(true);
-    console.log(`Fetching book with ID: ${id}`);
-    axios.get(`http://localhost:5555/books${books._id}`)
+    console.log(`Fetching book with id ${id}`);
+    axios.get(`http://localhost:5555/books/${id}`)
     .then((response)=>{
       setBooks(response.data.data);
       setLoading(false);
@@ -41,12 +41,12 @@ function ShowBook() {
 
   return (
     <div className='p-4 '>
-      <BackButton/>
+      <BackButton className=''/>
       <h1 className='text-3xl my-4'> ShowBook</h1>
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4'>
         <div className='my-4'>
           <span className='text-xl mr-4 text-greay-500'>Id</span>
-          <span>{books.id}</span>
+          <span>{books._id}</span>
         </div>
 
         <div className='my-4'>
