@@ -1,5 +1,6 @@
+This is a standard CRUD based FullStack project using the MERN stack.
 --------------------------------------------------------------------------------------------------
-    This is a standard CRUD based FullStack project using the MERN stack.
+    
     You can use this on your local machine by following the below mentioed steps:
     STEP 1: Download The repository on your local machine. 
             How to Download a repository: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
@@ -11,6 +12,6 @@
             1. Navigate to Boot-store\backend and type npm run dev
             2. navigate to Boot-store\frontend and type npm run dev
     STEP 6: Now the project must be succesfully running on your machine.
-
-Thank you for checking it out :)
+    
 --------------------------------------------------------------------------------------------------
+Thank you for checking it out :)
