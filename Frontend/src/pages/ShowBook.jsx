@@ -7,37 +7,24 @@ import Spinner from '../components/Spinner';
 function ShowBook() {
   const [books,setBooks]=useState({});
   const [loading,setLoading]=useState(false);
-  const {id}=useParams();
-  
+  const { id }=useParams();
+  console.log({id});
   useEffect(()=>{
-    setLoading(true);
-    console.log(`Fetching book with id ${id}`);
-    axios.get(`http://localhost:5555/books/${id}`)
-    .then((response)=>{
-      setBooks(response.data.data);
-      setLoading(false);
-    })
-    .catch((error)=>
-    {
-      console.log(error);
-      setLoading(false);
-    })
-  },[])
-
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   axios.get(`http://localhost:5555/books/${id}`) // Use id in the URL
-  //     .then((response) => {
-  //       setBooks(response.data.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //       setLoading(false);
-  //     });
-  // }, [id]);
-
+    if(id){//running the below code only if the id is defined
+      setLoading(true);
+      console.log(`Fetching book with id ${id}`);
+      axios.get(`http://localhost:5555/books/:${id}`/*,data*/)
+      .then((response)=>{
+        setBooks(response.data.data);
+        setLoading(false);
+      })
+      .catch((error)=>
+      {
+        console.log(error);
+        setLoading(false);
+      })
+    }
+  },[id]);
 
   return (
     <div className='p-4 '>

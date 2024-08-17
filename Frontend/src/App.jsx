@@ -33,7 +33,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home />}/> // Removed ./pages/ from paths
       <Route path='/create' element={<CreateBook />}/> // Removed ./pages/ from paths
-      <Route path='/show/:_id' element={<ShowBook />}/> // Removed ./pages/ from paths
+      <Route path='/show/:id' element={<ShowBook />}/> // Removed ./pages/ from paths
       <Route path='/delete/:id' element={<DeleteBook />}/> // Removed ./pages/ from paths
       <Route path='/edit/:id' element={<EditBook />}/> // Removed ./pages/ from paths
     </Routes>
